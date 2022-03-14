@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* ============================================================== */
+  /*                         COLOR AND BACKGROUND                   */
+  /* ============================================================== */
+
+  /* [1] Primary Color */
+  --purple-dark: #181a37;
+  --purple: #4d69d3;
+  --agreen: #55bdd5;
+
+  /* [2] Secondary Color */
+  --gray01: #404157;
+  --gray02: #737495;
+  --gray03: #acadcc;
+  --gray04: #d6d7ef;
+
+  /* [3] Gradients */
+  --gradient01: linear-gradient(102.33deg, #4d69d3 41.03%, #55bdd5 109.79%);
+}
+
+/* ============================================================== */
+/*                            TEXT STYLES                         */
+/* ============================================================== */
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: auto;
+}
+
+body {
+  background: var(--gradient01);
+  width: 100px;
+  height: 100px;
+}
