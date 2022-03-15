@@ -22,6 +22,10 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 .container {
   max-width: 70rem;
   margin: 0 auto;
