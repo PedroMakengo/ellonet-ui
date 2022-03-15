@@ -1,3 +1,9 @@
+.banner-center {
+  background-image: url(../images/fundo-banner-com-luzes.svg) !important;
+  background: var(--purple-dark);
+  height: 100vh;
+}
+
 header {
   height: 15vh;
 }
@@ -9,8 +15,31 @@ header .container {
   justify-content: space-between;
 }
 
-.banner-center {
-  background-image: url(../images/fundo-banner-com-luzes.svg) !important;
-  background: var(--purple-dark);
-  height: 100vh;
+header .container nav {
+  display: flex;
+  align-items: center;
+}
+
+header .container nav a {
+  font-style: normal;
+  color: #fff;
+  opacity: 0.8;
+
+  margin-right: 1.2rem;
+  background: transparent;
+}
+
+header .container nav a:last-child {
+  width: 149px;
+  height: 48px;
+
+  background: linear-gradient(var(--purple-dark), var(--purple-dark))
+      padding-box,
+    linear-gradient(to right, #4d69d3, #55bdd5) border-box;
+  border-radius: 8px;
+  border: 1px solid transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

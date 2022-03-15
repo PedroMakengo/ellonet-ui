@@ -18,8 +18,12 @@ button {
   border: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
-  max-width: 65rem;
+  max-width: 70rem;
   margin: 0 auto;
 }
 
