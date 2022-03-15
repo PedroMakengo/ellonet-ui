@@ -82,6 +82,9 @@ header .container nav a:last-child {
   margin-top: 2rem;
 }
 
-.content-center .container img {
+.content-center .container .hero-image {
   width: 50%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
