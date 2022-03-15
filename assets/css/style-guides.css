@@ -2,6 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  max-width: 50rem;
+  margin: 2rem auto;
 }
 
 :root {
@@ -34,8 +40,83 @@ h1 {
   line-height: auto;
 }
 
-body {
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: auto;
+}
+
+.subtitle-18 {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: auto;
+}
+
+.subtitle-14 {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: auto;
+}
+
+/* ============================================================== */
+/*                          GENERAL TEXTS                         */
+/* ============================================================== */
+.body16 {
+  font-size: 16px;
+  font-weight: medium;
+  line-height: 150%;
+}
+
+.body12 {
+  font-size: 14px;
+  font-weight: semi-bold;
+  line-height: 150%;
+}
+
+/* ============================================================== */
+/*                             BUTTONS                            */
+/* ============================================================== */
+.btn {
+  padding: 15px 90px;
+  font-size: 14px;
+  height: 48px;
+  border-radius: 0.3rem;
+  border: none;
+}
+
+.btn-gradient {
   background: var(--gradient01);
-  width: 100px;
-  height: 100px;
+  color: #fff;
+}
+
+.btn-default {
+  color: #000;
+  background: linear-gradient(#fff, #fff), var(--gradient01);
+  background-origin: padding-box, border-box;
+  background-repeat: no-repeat; /* this is important */
+  border: 2px solid transparent;
+}
+
+/* ============================================================== */
+/*                             SHADOWS                            */
+/* ============================================================== */
+
+/* $shadow-small */
+.shadow-small {
+  background: #ffffff;
+  box-shadow: 0px 10px 20px rgba(43, 37, 63, 0.1);
+  border-radius: 12px;
+
+  width: 300px;
+  height: 200px;
+}
+
+/* $shadow-small */
+.shadow-medium {
+  background: #ffffff;
+  box-shadow: 0px 0px 30px rgba(51, 48, 62, 0.2);
+  border-radius: 12px;
+
+  width: 300px;
+  height: 200px;
 }
