@@ -1,0 +1,16 @@
+header {
+  height: 15vh;
+}
+
+header .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner-center {
+  background-image: url(../images/fundo-banner-com-luzes.svg) !important;
+  background: var(--purple-dark);
+  height: 100vh;
+}

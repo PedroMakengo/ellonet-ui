@@ -2,12 +2,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+/* ============================================================== */
+/*                            RESET                               */
+/* ============================================================== */
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
 }
 
 .container {
-  max-width: 50rem;
-  margin: 2rem auto;
+  max-width: 65rem;
+  margin: 0 auto;
 }
 
 :root {
@@ -77,7 +90,7 @@ h2 {
 /*                             BUTTONS                            */
 /* ============================================================== */
 .btn {
-  padding: 15px 90px;
+  padding: 10px 20px;
   font-size: 14px;
   height: 48px;
   border-radius: 0.3rem;
