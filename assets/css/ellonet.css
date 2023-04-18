@@ -1,8 +1,8 @@
 .banner-center {
-  background-image: url(../images/fundo-banner-com-luzes.svg) !important;
+  background-image: url(../images/fundos/fundo-banner-com-luzes.svg) !important;
   background: var(--purple-dark);
   background-repeat: no-repeat;
-  height: 1350px;
+  height: 1350px; /* 1350*/
 }
 
 header {
@@ -21,6 +21,11 @@ header .container nav {
   align-items: center;
 }
 
+header .container nav ul {
+  display: flex;
+  align-items: center;
+}
+
 header .container nav a {
   font-style: normal;
   color: #fff;
@@ -30,19 +35,128 @@ header .container nav a {
   background: transparent;
 }
 
-header .container nav a:last-child {
+header .container nav a#last-child {
   width: 149px;
   height: 48px;
 
-  background: linear-gradient(var(--purple-dark), var(--purple-dark))
-      padding-box,
-    linear-gradient(to right, #4d69d3, #55bdd5) border-box;
+  background: linear-gradient(102.33deg, #4d69d3 41.03%, #55bdd5 109.79%);
+  /* background: linear-gradient(#4d69d3, #55bdd5); */
   border-radius: 8px;
-  border: 1px solid transparent;
 
   display: flex;
   justify-content: center;
+  font-weight: 300;
   align-items: center;
+  transition: background, 0.6s;
+}
+
+header .container nav a#last-child:hover {
+  color: #17182b;
+  font-weight: 600;
+  filter: brightness(4);
+}
+
+header .container #close-menu,
+header .container #open-menu {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .banner-center {
+    height: auto;
+    padding-bottom: 2rem;
+  }
+
+  /* Header Mobile */
+  header .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  header .container > a img {
+    width: 80%;
+  }
+
+  header .container nav {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background: #17182b;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 1;
+    position: fixed;
+
+    animation: show-left 0.3s forwards;
+  }
+
+  header .container nav button {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  header .container nav ul {
+    height: 95vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  header .container nav ul li {
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  header .container nav ul li a {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  header .container nav a#last-child {
+    width: 100%;
+  }
+
+  header .container #close-menu,
+  header .container #open-menu {
+    display: block;
+    width: 60px;
+    height: 40px;
+
+    border-radius: 0.4rem;
+    background: none;
+  }
+}
+
+@media (min-width: 720px) and (max-width: 1024px) {
+  /* Header Para Tablet */
+  .banner-center {
+    height: auto;
+    padding-bottom: 4rem;
+  }
+
+  header .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  header .container nav {
+    display: none;
+  }
+
+  header .container #open-menu {
+    display: block;
+    background: none;
+  }
 }
 
 /* CONTENT CENTER */
@@ -52,7 +166,14 @@ header .container nav a:last-child {
 
 .content-center .container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
+
+.content-center .container .content-row {
+  width: 100%;
+  height: 70%;
+  display: flex;
 }
 
 .content-center .container .describe {
@@ -61,7 +182,7 @@ header .container nav a:last-child {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .content-center .container .describe h1 {
@@ -73,19 +194,1874 @@ header .container nav a:last-child {
 }
 
 .content-center .container .describe p {
+  width: 443px;
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
 
-  color: #ffffff;
+  color: #fff;
   opacity: 0.86;
 
   margin-top: 2rem;
 }
 
+.content-center .container .describe .find-it-out {
+  margin-top: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.content-center .container .describe .find-it-out a img {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+
+  margin-right: 0.5rem;
+}
+
+.content-center .container .describe .find-it-out a::after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 804px;
+  left: 125px !important;
+  top: 545px;
+
+  /* Alterando border para border-right  */
+  border-right: 1.5px solid rgba(255, 255, 255, 0.1);
+}
+
 .content-center .container .hero-image {
   width: 50%;
   display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+@media (max-width: 640px) {
+  .content-center {
+    height: auto;
+  }
+
+  .content-center .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .content-center .container .content-row {
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    text-align: center;
+  }
+
+  .content-center .container .describe {
+    width: 100%;
+    margin-top: 4rem;
+    /* display: none; */
+  }
+
+  .content-center .container .describe .find-it-out {
+    display: none;
+  }
+
+  .content-center .container .describe h1 {
+    font-size: 2rem;
+  }
+
+  .content-center .container .describe p {
+    width: auto;
+  }
+
+  .content-center .container .hero-image {
+    width: 100%;
+  }
+
+  .content-center .container .hero-image img {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 720px) and (max-width: 1024px) {
+  .content-center .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .content-center .container .describe .find-it-out {
+    display: none;
+  }
+
+  .content-center .container .content-row {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    text-align: center;
+    margin-top: 6rem;
+  }
+
+  .content-center .container .describe {
+    width: 100%;
+  }
+
+  .content-center .container .describe p {
+    width: auto;
+  }
+
+  .content-center .container .hero-image {
+    width: 100%;
+  }
+}
+
+/* Trabalhando na parte o about banner */
+
+.content-row:nth-child(2) {
+  justify-content: flex-end;
+}
+
+.content-row .about {
+  width: 85%;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+
+  color: white;
+}
+
+.content-row .content-about {
+  text-align: right;
+  width: 624px;
+}
+
+.content-row .content-about span {
+  color: #55bdd5;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.content-row .content-about h2 {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 47px;
+  /* identical to box height */
+
+  color: #ffffff;
+  margin: 1rem 0;
+}
+
+.content-row .content-about p {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  opacity: 0.86;
+}
+
+.content-row .about .content-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+
+.content-row .content-cards .card {
+  width: 300px;
+  height: 250px;
+
+  background: rgba(77, 105, 211, 0.1);
+  box-shadow: inset 0px 4px 68px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(100px);
+
+  margin-left: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.content-row .content-cards .card img {
+  width: 122px;
+  height: 122px;
+}
+
+.content-row .content-cards .card h3 {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  color: #ffffff;
+}
+
+.content-row .content-cards .card p {
+  width: 250px;
+  height: 42px;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+
+  color: #ffffff;
+  opacity: 0.86;
+
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  /* Outro Content */
+  .content-row:nth-child(2) .about {
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .content-row .about {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .content-row .content-about {
+    width: auto;
+    text-align: center;
+  }
+
+  .content-row .about .content-cards {
+    flex-wrap: wrap;
+  }
+
+  .content-cards {
+    width: 100%;
+  }
+
+  .content-row .content-cards .card {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 720px) and (max-width: 1024px) {
+  .content-row:nth-child(2) .about {
+    width: 100%;
+  }
+
+  .content-row .about .content-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .content-row .about .content-cards .card:nth-child(3) {
+    grid-column-end: 3;
+  }
+}
+
+/* Ellonet Course */
+.ellonet-courses {
+  height: auto;
+  margin-top: 2rem;
+}
+
+.ellonet-courses .container .content-title-courses {
+  height: 70vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ellonet-courses .container .content-title-courses .cisco-courses {
+  display: flex;
+  width: 10%;
+}
+
+.ellonet-courses .container .content-title-courses .cisco-courses img {
+  width: 226px;
+  height: 226px;
+  left: 6px;
+  top: 1470px;
+
+  position: absolute;
+}
+
+.ellonet-courses .container .content-title-courses .cisco-courses:before {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 100px;
+  left: 125px !important;
+  top: 1388px;
+
+  border-right: 1.5px solid rgba(214, 215, 239, 0.5);
+}
+
+.ellonet-courses .container .content-title-courses .cisco-courses:after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 100px;
+  left: 125px !important;
+  top: 1700px;
+
+  border-right: 1.5px solid rgba(214, 215, 239, 0.5);
+}
+
+.ellonet-courses .container .content-title-courses .title {
+  width: 90%;
+  padding-top: 3rem;
+}
+
+.ellonet-courses .container .content-title-courses .title .subtitle-14 {
+  text-transform: uppercase;
+  color: #4d69d3;
+}
+
+.ellonet-courses .container .content-title-courses .title h2 {
+  width: 442px;
+
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 47px;
+
+  color: #181a37;
+  margin: 0.5rem 0;
+}
+
+.ellonet-courses .container .content-title-courses .title h2 span {
+  color: #4d69d3;
+  font-family: "IBM Plex Sans";
+}
+
+.ellonet-courses .container .content-title-courses .title p {
+  width: 462px;
+  height: 48px;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: var(--gray01);
+
+  opacity: 0.86;
+}
+
+/* TAB COURSERS */
+.tab-course {
+  margin-bottom: 4rem;
+  display: flex;
+}
+
+.tab-course button {
+  color: #404157;
+  background: none;
+  font-weight: 500;
+  font-size: 16px;
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  margin-right: 1rem;
+}
+
+.tab-course button svg {
+  margin-right: 1rem;
+}
+
+.tab-course button.active {
+  background: rgba(77, 105, 211, 0.1);
+  border-radius: 50px;
+}
+
+.tab-course button.active path {
+  fill: #4d69d3;
+}
+
+/* Tab Content */
+.content-courses .courses {
+  display: none;
+}
+
+.content-courses .courses.tab-active {
+  display: flex !important;
+  opacity: 1;
+  animation: show-left 0.3s forwards;
+}
+
+@keyframes show-left {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* COURSES */
+.courses {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-wrap: wrap;
+  gap: 2rem;
+  /* justify-content: space-between; */
+}
+
+.courses .card-course {
+  width: 30%;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  margin-bottom: 3rem;
+
+  color: #000;
+}
+
+.courses .card-course .bg-card {
+  width: 100%;
+  background-position: center;
+  background-size: cover !important;
+  height: 223px;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.courses .card-course .bg-card span {
+  width: 103px;
+  height: 26px;
+
+  background: #4d69d3;
+  border-radius: 27px;
+
+  position: relative;
+  top: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+
+  font-size: 12px;
+}
+
+.courses .card-course .card-body {
+  padding: 1rem;
+}
+
+.courses .card-course .card-body h3 {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.courses .card-course .card-body .time {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.courses .card-course .card-body .time img {
+  width: 19.5px;
+  height: 19.5px;
+  margin-right: 0.5rem;
+}
+
+.courses .card-course .card-body .time span {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #737495;
+}
+
+@media (max-width: 640px) {
+  .ellonet-courses {
+    height: auto;
+  }
+
+  .ellonet-courses .container {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  .ellonet-courses .container .content-title-courses {
+    height: auto;
+    padding-bottom: 5rem;
+  }
+
+  .ellonet-courses .container .content-title-courses .cisco-courses:after,
+  .ellonet-courses .container .content-title-courses .cisco-courses:before {
+    display: none;
+    height: 0;
+  }
+
+  .ellonet-courses .container .content-title-courses {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .ellonet-courses .container .content-title-courses .cisco-courses {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ellonet-courses .container .content-title-courses .cisco-courses img {
+    position: relative;
+    width: 100%;
+    height: 30%;
+    left: -1rem;
+    top: 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ellonet-courses .container .content-title-courses .title {
+    text-align: center;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .ellonet-courses .container .content-title-courses .title h2 {
+    width: 100%;
+  }
+
+  .ellonet-courses .container .content-title-courses .title p {
+    width: 100%;
+  }
+
+  .tab-course {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+  }
+
+  .tab-course button {
+    width: 29%;
+    margin-right: 0.6rem;
+  }
+
+  .tab-course button:nth-child(3) {
+    width: 30%;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .tab-course button:last-child {
+    width: 50%;
+  }
+
+  /* Card dos Courses */
+  .courses {
+    height: auto;
+  }
+
+  .courses .card-course {
+    width: 100%;
+  }
+}
+
+@media (min-width: 720px) and (max-width: 1024px) {
+  .ellonet-courses {
+    margin-top: 0;
+  }
+
+  .ellonet-courses .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .ellonet-courses .container .content-title-courses {
+    flex-wrap: wrap;
+    height: 54vh;
+  }
+
+  .ellonet-courses .container .content-title-courses .cisco-courses:after,
+  .ellonet-courses .container .content-title-courses .cisco-courses:before {
+    display: none;
+    height: 0;
+  }
+
+  .ellonet-courses .container .content-title-courses .cisco-courses img {
+    top: 2100px;
+    left: -18px;
+  }
+
+  .ellonet-courses .container .content-title-courses .title {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .ellonet-courses {
+    margin-top: 0;
+  }
+
+  .ellonet-courses .container .content-title-courses {
+    height: 45vh;
+  }
+
+  .content-center .container .describe .find-it-out a::after {
+    /* height: 775px; */
+    left: 403px;
+    top: 590px;
+  }
+
+  .ellonet-courses .container .content-title-courses .cisco-courses:before {
+    left: 403px;
+  }
+
+  .ellonet-courses .container .content-title-courses .cisco-courses:after {
+    height: 100px;
+    left: 403px;
+
+    border-right: 1.5px solid rgba(214, 215, 239, 0.5);
+  }
+
+  .ellonet-courses .container .content-title-courses .cisco-courses img {
+    width: 226px;
+    height: 226px;
+    left: 280px;
+  }
+
+  .courses .card-course {
+    width: 30%;
+  }
+
+  .content-title-courses {
+    height: 50vh !important;
+  }
+}
+
+@media (min-width: 1320px) {
+  .content-center .container .describe .find-it-out a::after {
+    height: 810px;
+    left: 110px;
+    top: 540px;
+  }
+
+  .ellonet-courses .container .content-title-courses .cisco-courses:before,
+  .ellonet-courses .container .content-title-courses .cisco-courses:after {
+    left: 110px;
+  }
+  .ellonet-courses .container .content-title-courses .cisco-courses img {
+    left: 1px;
+  }
+
+  /* .ellonet-courses .container .content-title-courses {
+    height: 100vh;
+  } */
+}
+
+@media (min-width: 1680px) and (max-width: 1920px) {
+  .content-center .container .describe .find-it-out a::after {
+    height: 780px;
+    left: 295px;
+    top: 450px;
+  }
+
+  .ellonet-courses .container .content-title-courses {
+    margin-bottom: 3rem;
+  }
+
+  .content-center .container .describe .find-it-out a::after {
+    left: 299px !important;
+    height: 800px !important;
+    top: 630px !important;
+  }
+
+  .ellonet-courses .container .content-title-courses .cisco-courses:after {
+    height: 140px;
+    left: 299px !important;
+    top: 1500px !important;
+  }
+
+  .ellonet-courses .container .content-title-courses .cisco-courses:before {
+    height: 140px;
+    top: 1800px !important;
+    left: 299px !important;
+  }
+
+  .ellonet-courses .container .content-title-courses .cisco-courses img {
+    top: 1592px !important;
+    left: 175px !important;
+    position: absolute;
+  }
+
+  .courses {
+    gap: 1rem;
+  }
+
+  .courses .card-course {
+    width: 32%;
+  }
+}
+
+/* SERVICES */
+.ellonet-services {
+  margin: 6rem 0 14rem 0;
+}
+
+.content-service {
+  width: 100%;
+  height: 400px;
+  background-color: #181a37;
+  background-image: linear-gradient(#181a37cb, #181a37),
+    url(../images/ilustracao-acelerar.svg);
+  background-position: center;
+  background-size: 100%;
+  border-radius: 16px 16px 6px 6px;
+}
+
+.content-service .title-service {
+  height: 99%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-service .title-service .title {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  color: #55bdd5;
+}
+
+.content-service .title-service h2 {
+  width: 539px;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 47px;
+  text-align: center;
+
+  margin: 1rem 0;
+  color: #ffffff;
+}
+
+.content-service .title-service h2 span {
+  color: #55bdd5;
+}
+
+.content-service .title-service p {
+  width: 568px;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  /* or 24px */
+
+  text-align: center;
+
+  color: #ffffff;
+
+  opacity: 0.86;
+}
+
+.content-service .bg-service {
+  height: 1%;
+  background: linear-gradient(90deg, #4d69d3 22.12%, #55bdd5 100.86%);
+  border-radius: 16px 16px 100px 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-service .bg-service a {
+  background: #fff;
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+@media (max-width: 640px) {
+  .content-service {
+    width: 100%;
+    border-radius: 0;
+    /* Verificar está questão */
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    /* Verificar está questão */
+  }
+
+  .content-service .title-service {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  .content-service .title-service h2 {
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 37px;
+  }
+
+  .content-service .title-service p {
+    width: 100%;
+  }
+}
+@media (min-width: 720px) and (max-width: 1024px) {
+  .content-service {
+    border-radius: 0;
+  }
+}
+
+.services {
+  margin-top: 8rem;
+}
+
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.service-item .service-icone {
+  width: 80px;
+  height: 80px;
+  background: url(../images/service/icons/infraestruturas.svg);
+  background-position: center;
+  background-size: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-item:nth-child(2n + 3) .ilustration {
   align-items: flex-start;
   justify-content: flex-start;
+}
+
+.services .next-service {
+  display: flex;
+  width: 63%;
+  height: 28vh;
+  background: url(../images/next-service.svg);
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.services .prev-service {
+  width: 58%;
+  margin-left: 1.5rem;
+  display: flex;
+  height: 28vh;
+  background: url(../images/prev-service.svg);
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.service-item .ilustration:nth-child(2),
+.service-item .ilustration {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.service-item .ilustration img {
+  width: 80%;
+}
+
+.service-item .description h2 {
+  width: 405px;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 47px;
+
+  color: #181a37;
+}
+
+.service-item .description h2 span {
+  color: #4d69d3;
+}
+
+.service-item .description p {
+  width: 460px;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: #404157;
+
+  opacity: 0.86;
+  margin: 1.5rem 0;
+
+  text-align: justify;
+}
+
+.service-item .description a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(to right, #4d69d3, #55bdd5) border-box;
+  border-radius: 8px;
+  border: 1px solid transparent;
+
+  width: 255px;
+  height: 48px;
+
+  text-align: center;
+  transition: background, 0.5s;
+}
+
+.service-item .description a:hover {
+  background: linear-gradient(102.33deg, #4d69d3 41.03%, #55bdd5 109.79%);
+  color: #fff;
+}
+
+.service-item .description a span {
+  width: 80%;
+  padding-left: 1rem;
+  box-sizing: border-box;
+}
+
+.service-item .description a svg {
+  height: 24px;
+  display: flex;
+}
+
+.service-item .description a:hover svg rect,
+.service-item .description a:hover svg path {
+  fill: white;
+}
+
+@media (max-width: 640px) {
+  .services {
+    max-width: 90% !important;
+    margin: 3rem auto;
+  }
+
+  .services .next-service,
+  .services .prev-service {
+    display: none;
+  }
+
+  .service-item {
+    width: 100% !important;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    flex-direction: column;
+  }
+
+  .service-item .description h2 {
+    font-size: 1.5rem;
+    width: 100%;
+  }
+
+  .service-item .description p {
+    width: 100%;
+  }
+
+  .service-item .description a {
+    width: 100%;
+  }
+
+  .service-item .description {
+    width: 100%;
+  }
+
+  .service-item .description .service-icone {
+    margin: 0 auto;
+  }
+
+  .service-item .ilustration {
+    width: 100%;
+    margin: 2rem auto;
+    align-items: center;
+  }
+
+  .service-item .ilustration img {
+    width: 100%;
+  }
+
+  .item-reverse {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+@media (min-width: 720px) and (max-width: 1024px) {
+  .services {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .services .next-service,
+  .services .prev-service {
+    display: none;
+  }
+
+  .service-item {
+    width: 100% !important;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+    flex-direction: column;
+  }
+
+  .item-reverse {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .service-item .description {
+    margin-bottom: 4rem;
+  }
+
+  .service-item .description h2 {
+    font-size: 1.5rem;
+    width: 100%;
+  }
+  .service-item .description a,
+  .service-item .description p {
+    width: 100%;
+  }
+}
+
+/* PARA EMPRESAS */
+.ellonent-company {
+  background: url(../images/fundos/bg-treinamentos.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 8rem 0;
+}
+
+.ellonent-company .title-company {
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.ellonent-company .title-company > span {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  color: #55bdd5;
+}
+
+.ellonent-company .title-company h2 {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+
+  width: 677px;
+  margin: 1rem auto;
+}
+
+.ellonent-company .title-company h2 span {
+  color: #55bdd5;
+}
+
+.ellonent-company .title-company p {
+  width: 560px;
+  height: 72px;
+
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+
+  color: #ffffff;
+
+  opacity: 0.86;
+
+  margin: 0 auto;
+}
+
+.ellonent-company .courses-company {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  padding-top: 6rem;
+}
+
+.ellonent-company .courses-company .card-course {
+  width: 350px;
+  background: #ffffff;
+  box-shadow: 0px 4px 24px rgba(24, 26, 55, 0.02);
+  border-radius: 8px;
+  /* margin: 1rem; */
+
+  margin-top: 1.5rem;
+  margin-right: 1rem;
+}
+
+.ellonent-company .courses-company .card-course .bg-card {
+  background: url(../images/courses/ccna-introduction.svg);
+  background-position: center;
+  background-size: cover;
+  height: 223px;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  padding: 0 2rem;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.ellonent-company .courses-company .card-course .bg-card span {
+  width: 103px;
+  height: 26px;
+
+  background: #181a37;
+  border-radius: 27px;
+
+  position: relative;
+  top: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+
+  font-size: 12px;
+}
+
+.ellonent-company .courses-company .card-course .card-body {
+  padding: 1.5rem 2rem;
+}
+
+.ellonent-company .card-body h3 {
+  margin: 0.7rem 0 0.5rem 0;
+  color: #181a37;
+  height: 7.5vh;
+}
+
+.ellonent-company .card-body p {
+  color: #404157;
+}
+
+.ellonent-company .card-body a {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+
+  color: #55bdd5;
+}
+
+.ellonent-company .card-body a img {
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .ellonent-company .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .ellonent-company .title-company h2 {
+    font-size: 1.5rem;
+    line-height: 37px;
+  }
+
+  .ellonent-company .courses-company,
+  .ellonent-company .title-company h2,
+  .ellonent-company .title-company p {
+    width: 100%;
+  }
+
+  .ellonent-company .courses-company {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0rem;
+  }
+
+  .ellonent-company .courses-company .card-course {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 720px) and (max-width: 1024px) {
+  .ellonent-company .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .ellonent-company .courses-company {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .ellonent-company .courses-company .card-course {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* FORMADORES */
+.ellonent-trainers {
+  padding: 7rem 0;
+}
+
+.ellonent-trainers .title-trainers > span {
+  display: flex;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  color: #4d69d3;
+  margin: 1rem 0;
+}
+
+.ellonent-trainers .title-trainers h2 {
+  width: 518px;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 47px;
+}
+
+.ellonent-trainers .title-trainers h2 span {
+  color: #4d69d3;
+}
+
+.ellonent-trainers .title-trainers p {
+  width: 497px;
+  height: 48px;
+  left: 112px;
+  top: 10186px;
+
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #404157;
+
+  opacity: 0.86;
+  margin-top: 1rem;
+}
+
+.ellonent-trainers .trainers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3rem;
+
+  margin-top: 4rem;
+}
+
+.ellonent-trainers .trainers .card-trainer {
+  width: 254px;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.ellonent-trainers .trainers .card-trainer img {
+  /* width: 120px; */
+  height: 90px;
+  margin-bottom: 2rem;
+}
+
+.ellonent-trainers .trainers .card-trainer h3 {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+
+  color: #181a37;
+}
+
+.ellonent-trainers .trainers .card-trainer span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #4d69d3;
+  margin: 0.3rem 0 1rem 0;
+}
+
+@media (max-width: 640px) {
+  .ellonent-trainers .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .ellonent-trainers .title-trainers > span {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ellonent-trainers .title-trainers h2 {
+    font-size: 1.5rem;
+  }
+
+  .ellonent-trainers .trainers {
+    grid-template-columns: 1fr;
+    gap: 0rem;
+  }
+
+  .ellonent-trainers .title-trainers h2,
+  .ellonent-trainers .title-trainers p {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ellonent-trainers .trainers .card-trainer {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 720px) and (max-width: 1024px) {
+  .ellonent-trainers .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .ellonent-trainers .trainers {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .ellonent-trainers .trainers .card-trainer {
+    width: 100%;
+  }
+
+  .ellonent-trainers .trainers .card-trainer p {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* ACELERAR A SUA EMPRESA */
+.ellonet-growth-company {
+  background: url(../images/ilustracao-acelerar.svg);
+  background-color: #181a37;
+  background-position: center;
+  background-size: 85%;
+  background-position-x: 500px;
+  background-position-y: -100px;
+  background-repeat: repeat-x;
+  height: 630px;
+  opacity: 0.96;
+  /* padding: 2rem 0; */
+}
+
+.p-4 {
+  height: 887px;
+}
+
+.ellonet-growth-company .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.ellonet-growth-company .title-growth-company .bg-growth {
+  width: 80px;
+  height: 80px;
+  background: url(../images/service/icons/infraestruturas.svg);
+  background-position: center;
+  background-size: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto;
+}
+
+.ellonet-growth-company .title-growth-company {
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.ellonet-growth-company .title-growth-company h2 {
+  width: 800px;
+  margin: 1rem auto 2rem auto;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 47px;
+  text-align: center;
+}
+
+.ellonet-growth-company .title-growth-company p {
+  width: 550px;
+  margin: 0 auto 2rem auto;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+
+  opacity: 0.86;
+}
+
+.ellonet-growth-company .title-growth-company a {
+  display: flex;
+  width: 255px;
+  height: 48px;
+
+  background: linear-gradient(102.33deg, #4d69d3 41.03%, #55bdd5 109.79%);
+  border-radius: 8px;
+
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: background, transform 0.3s;
+}
+
+.ellonet-growth-company .title-growth-company a:hover {
+  background: #fff;
+  color: #000;
+}
+
+.ellonet-growth-company .title-growth-company a span {
+  width: 70%;
+  padding-left: 1rem;
+}
+
+.form {
+  width: 350px;
+  margin: 0 auto;
+  display: none;
+  opacity: 1;
+  animation: show-left 0.3s forwards;
+}
+
+.form input,
+textarea {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: 0;
+}
+
+.form input {
+  height: 48px;
+}
+
+.form textarea {
+  height: 150px;
+}
+
+.form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  border-radius: 0.5rem;
+
+  background: linear-gradient(102.33deg, #4d69d3 41.03%, #55bdd5 109.79%);
+  color: #fff;
+}
+
+form button .span {
+  width: 70%;
+  padding-left: 1rem;
+}
+
+@media (max-width: 640px) {
+  .ellonet-growth-company {
+    background-size: 200%;
+    background-position-x: 100px;
+    background-position-y: -50px;
+  }
+
+  .ellonet-growth-company .container {
+    max-width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title-growth-company {
+    width: 100%;
+  }
+
+  .ellonet-growth-company .title-growth-company h2 {
+    font-size: 1.5rem;
+    line-height: 37px;
+  }
+
+  .ellonet-growth-company .title-growth-company h2,
+  .ellonet-growth-company .title-growth-company P {
+    width: 100%;
+  }
+
+  .form {
+    width: 100%;
+  }
+}
+
+@media (min-width: 720px) and (max-width: 1024px) {
+  .ellonet-growth-company {
+    background-size: 200%;
+    background-position-x: 100px;
+    background-position-y: -90px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .banner-center {
+    height: auto;
+    padding-bottom: 3rem;
+  }
+  .container {
+    max-width: 70%;
+  }
+
+  .content-center .container .describe .find-it-out a::after {
+    margin-top: 3rem;
+  }
+
+  .ellonet-courses .container .content-title-courses .cisco-courses:after,
+  .content-center .container .describe .find-it-out a::after,
+  .ellonet-courses .container .content-title-courses .cisco-courses:before {
+    left: 295px;
+  }
+
+  .content-center .container .describe .find-it-out a::after {
+    top: 700px;
+    height: 1900px;
+  }
+
+  .ellonet-courses .container .content-title-courses .cisco-courses:after {
+    top: 1640px;
+  }
+
+  .ellonet-courses .container .content-title-courses .cisco-courses:before {
+    top: 1925px;
+  }
+
+  .ellonet-courses .container .content-title-courses .cisco-courses img {
+    top: 1700px;
+    left: 170px;
+  }
+
+  .content-center .container .content-row:nth-child(1) {
+    height: 80vh;
+
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* FOOTER */
+footer {
+  background: url(../images/fundos/footer-ilustracao.svg);
+  background-color: #181a37;
+  background-repeat: no-repeat;
+  background-position-x: -260px;
+  background-position-y: 200px;
+  background-size: 50%;
+  height: 483px;
+  box-sizing: border-box;
+}
+
+footer > .container {
+  height: 82%;
+  padding: 2rem 0 0 0;
+}
+
+footer .copyright {
+  height: 18%;
+  background: #13142972;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+}
+
+footer .copyright p {
+  opacity: 0.3;
+}
+
+footer .container .footer-items {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+}
+
+footer .container .footer-items .footer-item {
+  width: 30%;
+  color: #fff;
+}
+
+footer .container .footer-items .footer-item:nth-child(1) {
+  width: 40%;
+}
+
+footer .container .footer-items .footer-item:nth-child(1) ul {
+  margin-top: 0;
+}
+
+footer .container .footer-items .footer-item:nth-child(1) ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .container .footer-items .footer-item:nth-child(1) ul li span {
+  width: 93%;
+}
+
+footer .container .footer-items .footer-item:nth-child(1) ul li a,
+footer .container .footer-items .footer-item:nth-child(1) ul li span a {
+  color: #fff;
+  opacity: 1;
+}
+
+footer .container .footer-items .footer-item:nth-child(1) ul li#email a span {
+  margin-left: 0.5rem;
+}
+
+footer .container .footer-items .footer-item ul {
+  margin-top: 1.2rem;
+}
+
+footer .container .footer-items .footer-item ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer .container .footer-items .footer-item ul li a {
+  color: #fff;
+  opacity: 0.7;
+}
+
+/* REDES SOCIAIS */
+footer .container .footer-items .footer-item .social-midia {
+  display: flex;
+}
+
+footer .container .footer-items .footer-item .social-midia li {
+  margin-right: 1rem;
+}
+
+footer .container .footer-items .footer-item .social-midia li a {
+  opacity: 1;
+}
+
+.modal-container {
+  display: none;
+}
+
+.open-modal {
+  background: rgba(9, 9, 9, 0.831);
+
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+
+  position: fixed;
+  overflow-y: hidden !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: show-left 0.3s forwards;
+}
+
+.open-modal .modal-content {
+  background: white;
+  width: 50%;
+  height: 50vh;
+
+  border-radius: 0.5rem;
+}
+
+.open-modal .modal-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.open-modal .modal-header #close {
+  width: 45px;
+  height: 45px;
+
+  border-radius: 45px;
+
+  position: absolute;
+
+  margin-right: -1rem;
+  margin-top: -1rem;
+
+  color: #fff;
+  font-weight: bold;
+
+  background: #4d69d3;
+}
+
+@media (max-width: 640px) {
+  footer {
+    height: auto;
+  }
+
+  footer .container {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  footer .container > img {
+    width: 60%;
+  }
+
+  footer .container .footer-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .container .footer-items .footer-item {
+    margin-top: 2rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  footer .container .footer-items .footer-item:nth-child(1) {
+    width: 100%;
+  }
+
+  footer .container .footer-items .footer-item:nth-child(1) p {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  footer .container .footer-items .footer-item:nth-child(1) ul li {
+    width: 70%;
+    margin: 0 auto;
+    justify-content: space-around;
+  }
+
+  footer .container .footer-items .footer-item:nth-child(1) ul li#email {
+    width: 45%;
+  }
+
+  footer .container .footer-items .footer-item:nth-child(1) ul li span {
+    align-items: center;
+    width: 90%;
+  }
+
+  footer .container .footer-items .footer-item .social-midia {
+    justify-content: center;
+  }
+
+  footer .copyright {
+    height: 42px;
+  }
+
+  .open-modal .modal-content {
+    width: 90%;
+  }
+}
+
+@media (min-width: 720px) and (max-width: 1024px) {
+  footer {
+    height: auto;
+  }
+
+  footer .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  footer .container .footer-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+  footer .container .footer-items .footer-item,
+  footer .container .footer-items .footer-item:nth-child(1),
+  footer .container .footer-items .footer-item:nth-child(1) p {
+    width: 100%;
+  }
+
+  footer .container .footer-items .footer-item p {
+    width: 100%;
+  }
+
+  footer .copyright {
+    height: 80px;
+  }
 }
