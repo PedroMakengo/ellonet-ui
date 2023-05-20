@@ -228,7 +228,7 @@ header .container #open-menu {
 }
 
 .content-center .container .describe .find-it-out a::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 0px;
   height: 804px;
@@ -244,6 +244,11 @@ header .container #open-menu {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+}
+
+.content-center .container .hero-image img {
+  position: relative;
+  right: -15%;
 }
 
 @media (max-width: 640px) {
@@ -344,7 +349,7 @@ header .container #open-menu {
 
 .content-row .content-about span {
   color: #55bdd5;
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -353,7 +358,7 @@ header .container #open-menu {
 }
 
 .content-row .content-about h2 {
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -365,7 +370,7 @@ header .container #open-menu {
 }
 
 .content-row .content-about p {
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -401,7 +406,7 @@ header .container #open-menu {
 }
 
 .content-row .content-cards .card h3 {
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -412,7 +417,7 @@ header .container #open-menu {
 .content-row .content-cards .card p {
   width: 250px;
   height: 42px;
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -500,7 +505,7 @@ header .container #open-menu {
 
 .ellonet-courses .container .content-title-courses .cisco-courses:before {
   position: absolute;
-  content: "";
+  content: '';
   width: 0px;
   height: 100px;
   left: 125px !important;
@@ -510,7 +515,7 @@ header .container #open-menu {
 }
 
 .ellonet-courses .container .content-title-courses .cisco-courses:after {
-  content: "";
+  content: '';
   position: absolute;
   width: 0px;
   height: 100px;
@@ -533,7 +538,7 @@ header .container #open-menu {
 .ellonet-courses .container .content-title-courses .title h2 {
   width: 442px;
 
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -545,13 +550,13 @@ header .container #open-menu {
 
 .ellonet-courses .container .content-title-courses .title h2 span {
   color: #4d69d3;
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
 }
 
 .ellonet-courses .container .content-title-courses .title p {
   width: 462px;
   height: 48px;
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -682,16 +687,22 @@ header .container #open-menu {
   display: flex;
   align-items: center;
   margin-top: 1rem;
+  justify-content: space-between;
 }
 
-.courses .card-course .card-body .time img {
+.courses .card-course .card-body .time .time-cont {
+  display: flex;
+  align-items: center;
+}
+
+.courses .card-course .card-body .time .time-cont img {
   width: 19.5px;
   height: 19.5px;
   margin-right: 0.5rem;
 }
 
 .courses .card-course .card-body .time span {
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -952,7 +963,7 @@ header .container #open-menu {
 }
 
 .content-service .title-service .title {
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -964,7 +975,7 @@ header .container #open-menu {
 
 .content-service .title-service h2 {
   width: 539px;
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -981,7 +992,7 @@ header .container #open-menu {
 
 .content-service .title-service p {
   width: 568px;
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1020,11 +1031,11 @@ header .container #open-menu {
   .content-service {
     width: 100%;
     border-radius: 0;
-    /* Verificar está questão */
+    /* Verificar estÃ¡ questÃ£o */
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
-    /* Verificar está questão */
+    /* Verificar estÃ¡ questÃ£o */
   }
 
   .content-service .title-service {
@@ -1109,7 +1120,7 @@ header .container #open-menu {
 
 .service-item .description h2 {
   width: 405px;
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -1124,7 +1135,7 @@ header .container #open-menu {
 
 .service-item .description p {
   width: 460px;
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1287,7 +1298,7 @@ header .container #open-menu {
 }
 
 .ellonent-company .title-company > span {
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -1298,7 +1309,7 @@ header .container #open-menu {
 }
 
 .ellonent-company .title-company h2 {
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -1315,7 +1326,7 @@ header .container #open-menu {
   width: 560px;
   height: 72px;
 
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1458,7 +1469,7 @@ header .container #open-menu {
 
 .ellonent-trainers .title-trainers > span {
   display: flex;
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -1471,7 +1482,7 @@ header .container #open-menu {
 
 .ellonent-trainers .title-trainers h2 {
   width: 518px;
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -1488,7 +1499,7 @@ header .container #open-menu {
   left: 112px;
   top: 10186px;
 
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1520,7 +1531,7 @@ header .container #open-menu {
 }
 
 .ellonent-trainers .trainers .card-trainer h3 {
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -1533,7 +1544,7 @@ header .container #open-menu {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1644,7 +1655,7 @@ header .container #open-menu {
   width: 800px;
   margin: 1rem auto 2rem auto;
 
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -1656,7 +1667,7 @@ header .container #open-menu {
   width: 550px;
   margin: 0 auto 2rem auto;
 
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
